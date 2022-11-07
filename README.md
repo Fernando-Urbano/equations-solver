@@ -9,7 +9,9 @@ Rules:
 
 Start by creating an instance of the class which will work as that system of equations:
 
-`a = Groups()`
+```
+a = Groups()
+```
 
 Add any information you want:
 

@@ -1,4 +1,4 @@
-# Equation Solver
+# System of Equations Solver
 The equation solver class is used to solve any system of equations and can include union and interception of groups.
 
 Rules:

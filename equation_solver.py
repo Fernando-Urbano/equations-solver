@@ -35,28 +35,6 @@ def organize_information(information):
 class Groups:
  def __init__(self):
     self.equations = []
-    
-    def organize_information(information):
-        all_patterns = [
-            "([*][*]|[*]|[/][/]|[/]|[+]|[-])([a-z]+)",
-            "([a-z]+)([*][*]|[*]|[/][/]|[/]|[+]|[-])",
-            "(\d+)([*][*]|[*]|[/][/]|[/]|[+]|[-])",
-            "([*][*]|[*]|[/][/]|[/]|[+]|[-])(\d+)",
-            "(\d+)([a-z]+)"
-        ]
-        for selected_pattern in all_patterns:
-            patterns_found = re.findall(selected_pattern, information)
-            for tuple_pattern_found in patterns_found:
-                list_pattern_altered = [''.join(x) for x in tuple_pattern_found]
-                pattern_found = ''.join(list_pattern_altered)
-                if selected_pattern == "(\d+)([a-z]+)":
-                    pattern_altered = ' * '.join(list_pattern_altered)
-                else:
-                    pattern_altered = ' '.join(list_pattern_altered)
-                information = information.replace(pattern_found, pattern_altered)
-        information = information.replace("(", " ( ").replace(")", " ) ")
-        
-        return information
         
  def add_information(self, information):
     information = re.sub("[=]", " = ", information)
